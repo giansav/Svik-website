@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "Orecchini xxxyy",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkkjef",
+        "image": "products-img/item7.png",
+        "price": 50
+    },
+    {
+        "id": "2",
+        "name": "Orecchini Classici",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkk u894fnvnwr89n jkd jef",
+        "image": "products-img/item8.png",
+        "price": 40
+    },
+    {
+        "id": "3",
+        "name": "Orecchini xxxyy",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc ef",
+        "image": "products-img/item7.png",
+        "price": 50
+    },
+    {
+        "id": "4",
+        "name": "Orecchini Classici 2s",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkkjef",
+        "image": "products-img/item2.png",
+        "price": 40
+    },
+    {
+        "id": "5",
+        "name": "Orecchini xzzz",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkkjef",
+        "image": "products-img/item5.png",
+        "price": 50
+    },
+    {
+        "id": "6",
+        "name": "Orecchini Classici psi",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkk jionoo  jicw90 jiod jef",
+        "image": "products-img/item1.png",
+        "price": 40
+    }
+]

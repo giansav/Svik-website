@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svikò Jewelry - Crafted Elegance</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="Crafted Elegance" class="logo-image">
+            Svikò Jewelry - Crafted Elegance</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="shop.html" target="_blank" rel="noopener noreferrer">Shop</a></li>
+                </ul>
+            </nav>
+            <div id="cart-icon">
+            <i class="ri-shopping-bag-fill"></i>
+            <span class="cart-item-count"></span>
+        </div>
+
+    </header>
+
+
+    <div class="cart" id="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content">
+            <div class="cart-box">
+                <img src="products-img/item1.png">
+                <div class="cart-detail">
+                    <h2 class="cart-product-title">Nome prodotto 1</h2>
+                    <span class="cart-price">€100</span>
+                    <div class="cart-quantity"><!-- i button non devono funzionare perché sono pezzi unici -->
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="ri-delete-bin-fill cart-remove"></i>
+            </div>
+        </div>
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">€0</div>
+        </div>
+        <button class="btn-buy">Buy Now</button>
+        <i class="ri-close-large-fill" id="cart-close"></i>
+    </div>
+
+
+    <main>
+        <section id="presentation" class="presentation">
+            <div class="presentation-content">
+                <h1>Svikò Jewelry</h1>
+                <p>Crafted Elegance</p>
+            </div>
+        </section>
+        
+        <section id="home" class="hero">
+            </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>Welcome to Svikò Jewelry! I'm Svitlana Kochetova, an artist and jewelry designer with a passion for transforming creativity into wearable art. Since 2015, I have been working with the intricate technique of beadwork, designing and crafting each piece entirely by hand.</p>
+            <p>Every creation is born from my vision, shaped with meticulous attention to detail, and infused with passion. My goal is to celebrate individuality by offering unique, custom-made jewelry that tells your story. Each piece is more than just an accessory—it’s a reflection of your essence, a treasure made just for you.</p>
+        </section>
+
+        <section id="creations" class="creations">
+            <h2>My Creations</h2>
+            <div class="category-grid">
+
+                <div class="category-section">
+                    <h3><a href="shop.html#bracelets">Bracelets</a></h3>
+                    <a href="shop.html#bracelets"><img src="img/bracelets.jpg" alt="Bracelets"></a>
+                    <p>Handmade bracelets that tell your story.</p>
+                </div>
+
+                <div class="category-section">
+                    <h3><a href="shop.html#necklaces-pendants">Necklaces & Pendants</a></h3>
+                    <a href="shop.html#necklaces-pendants"><img src="img/necklaces.jpeg" alt="Necklaces & Pendants"></a>
+                    <p>Elegant necklaces and pendants for every occasion.</p>
+                </div>
+
+                <div class="category-section">
+                    <h3><a href="shop.html#brooches">Brooches</a></h3>
+                    <a href="shop.html#brooches"><img src="img/brooches.jpg" alt="Brooches"></a>
+                    <p>Unique brooches to complete your look.</p>
+                </div>
+
+                <div class="category-section">
+                    <h3><a href="shop.html#earrings">Earrings</a></h3>
+                    <a href="shop.html#earrings"><img src="img/earrings.jpg" alt="Earrings"></a>
+                    <p>Stylish earrings to match your style.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Do you want to order a customized product?</h2>
+            <h2>Do you want more information about my work?</h2>
+            <h2>CONTACT ME!</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Email: <a href="mailto:svitlanakochetova@libero.it">svitlanakochetova@libero.it</a></p>
+            <p>Phone: <a href="tel:+393283450654">+39 328 345 0654</a></p>
+            <p>Location: Naples, Italy</p>
+            <p>Customer Service: 9:00 AM – 6:00 PM (Rome time)</p>
+        </div>
+    
+        <div class="shipping-info">
+            <h3>Shipping Information</h3>
+            <p>All packages are shipped via Italian Post with priority tracking.Alternative shipping methods available upon request.</p>
+            <p>Delivery times:</p>
+            <ul>
+            <li><strong>EU:   </strong> 7-14 days</li>
+            <li><strong>US & Worldwide:   </strong> 10-30 days</li>
+            </ul>
+            <p>International shipments may be delayed by customs. All packages are shipped in a customer-friendly way.</p>
+        </div>
+    
+        <div class="footer-links">
+            <h3><a href="terms.html">Terms, Conditions & Privacy Policy</a></h3>
+        </div>
+        </div>
+    </footer>
+
+
+    <script src="cart.js"></script>
+    <script src="contact-form.js"></script>
+    <script src="products.js"></script>
+</body>
+
+
+</html>

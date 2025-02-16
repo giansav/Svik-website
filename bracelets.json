@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "Bracciale Pinco",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc jef",
+        "image": "products-img/item1.png",
+        "price": 50
+    },
+    {
+        "id": "2",
+        "name": "Bracciale xxxyy",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkkjef vnfeo 00",
+        "image": "products-img/item6.png",
+        "price": 50
+    },
+    {
+        "id": "3",
+        "name": "Bracciale ZZ",
+        "description": "lorem ipsum etc etc etc njvsnkavsnjkivfnjkkjef",
+        "image": "products-img/item5.png",
+        "price": 50
+    },
+    {
+        "id": "4",
+        "name": "Bracciale Classico",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkkjef",
+        "image": "products-img/item2.png",
+        "price": 40
+    }
+]

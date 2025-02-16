@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6; /* Improved readability */
+}
+
+a {
+    text-decoration: none;
+    color: #e35f26; /* Your accent color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+    color: #d14f0f; /* Slightly darker accent color on hover */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e35f26;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d14f0f;
+}
+
+
+body {
+    color: #333;
+
+}
+
+header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 7%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+
+/* Stile dell'immagine del logo */
+.logo-image {
+    float: left; /* L'immagine "galleggia" a sinistra */
+    width: 120px; /* Imposta la larghezza desiderata */
+    height: auto; /* Mantiene le proporzioni */
+    margin-right: 40px; /* Spazio tra immagine e testo */
+}
+
+/* Stile del menù di navigazione */
+.main-nav ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make list items horizontal */
+}
+
+.main-nav li {
+    margin-right: 20px; /* Add spacing between list items */
+}
+
+.main-nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #333; /* Set link color */
+    font-weight: 500; /* Adjust font weight as needed */
+    transition: color 0.3s ease; /* Transizione per il cambio colore */
+}
+
+.main-nav a:hover {
+    color: #e35f26; /* Colore al passaggio del mouse */
+}
+
+
+#cart-icon {
+    position: relative;
+    display: flex;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+#cart-icon .cart-item-count {
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: #e35f26;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.shop {
+    padding: 100px 9% 30px;    
+}
+
+.section-title {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #e35f26;    
+}
+
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;    
+}
+
+.category-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444;
+    border-bottom: 2px solid #e35f26;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.product-box {
+    width: 100%;
+    max-width: 300px; /* Limita la larghezza massima */
+    height: 400px; /* Fissa l'altezza per mantenere tutti uguali */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.image-box {
+    width: 100%;
+    height: 250px; /* Altezza fissa per uniformare tutte le immagini */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Evita la distorsione delle immagini */
+}
+
+.product-title {
+    font-size: 18px;
+    margin-top: 10px;
+    flex-grow: 1; /* Permette di occupare spazio se necessario */
+}
+
+.product-description { /* Stile per la descrizione */
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center; /* Allinea a sinistra su schermi più grandi */
+}
+
+.price-and-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Spinge in basso la sezione prezzo/carrello */
+}
+
+.product-box .image-box {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;    
+}
+
+.image-box img {
+    width: 100%;
+    transition: 0.5s;    
+}
+
+.image-box:hover img {
+    transform: scale(1.1);    
+}
+
+.product-box .product-title {
+    font-size: 20px;
+    margin-top: 10px;    
+}
+
+.product-box .price-and-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.price-and-cart .price {
+    font-size: 18px;
+    font-weight: 500;    
+}
+
+.price-and-cart .add-cart {
+    padding: 10px;
+    background: #e35f26;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;    
+}
+
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%; /* scomparsa del carrello quando non richiesto */
+    width: 360px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 65px 20px 40px;
+    z-index: 100;
+    overflow: auto;
+}
+
+.cart.active {
+    right: 0; /* Quando il carrello è attivo, lo fa apparire */
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.cart-box {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cart-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cart-detail {
+    display: grid;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.cart-product-title {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.cart-price {
+    font-weight: 500;
+}
+
+.cart-quantity {
+    display: flex;
+    width: 100px;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+.cart-quantity button {
+    background: transparent;
+    width: 30px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-quantity .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    cursor: default;
+}
+
+.cart-remove {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.total-price {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.btn-buy {
+    display: block;
+    padding: 10px 30px;
+    background: #e35f26;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+#cart-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 360px)  {
+    .product-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .cart {
+        width: 100%;
+    }
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 40px 9%; /* Padding top/bottom and left/right */
+    color: #333; /* Dark text color */
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: space-between; /* Distribute space between columns */
+    max-width: 1200px; /* Optional: Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.contact-info,
+.shipping-info,
+.footer-links {
+    flex: 1 1 300px; /* Each column takes up 1/3 of the container */
+    margin-bottom: 20px; /* Space between columns on smaller screens */
+}
+
+.contact-info h3,
+.shipping-info h3,
+.footer-links h3 {
+    font-size: 18px; /* Slightly larger heading size */
+    margin-bottom: 10px;
+}
+
+.contact-info a,
+.shipping-info a,
+.footer-links a {
+    color: #333; /* Link color */
+    text-decoration: none; /* Remove underlines */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.contact-info a:hover,
+.shipping-info a:hover,
+.footer-links a:hover {
+    color: #e35f26; /* Highlight color on hover */
+}
+
+.shipping-info ul {
+    list-style: none; /* Remove bullet points from list */
+    padding: 0;
+    margin: 10px 0;
+}
+
+.shipping-info li {
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+    .contact-info,
+    .shipping-info,
+    .footer-links {
+        flex: 1 1 100%; /* Each column takes full width on smaller screens */
+        margin-bottom: 30px; /* Increased spacing between columns */
+        text-align: center; /* Center text in columns */
+    }
+
+    .shipping-info ul {
+      text-align: left; /* Align list items to the left */
+    }
+}
+
+
+/* Stili per la sezione "Presentation" */
+.presentation {
+    background-image: url("img/bg.jpg"); /* Sostituisci con l'immagine di sfondo */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Regola l'altezza a piacimento */
+    display: flex;
+    flex-direction: column; /* Allinea gli elementi verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    color: #fff; /* Testo bianco per contrasto */
+    text-align: center; /* Testo centrato */
+}
+
+.presentation-content {
+    max-width: 800px; /* Larghezza massima del contenuto */
+    margin: 0 auto; /* Centra il contenuto */
+}
+
+.presentation h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.presentation p {
+    font-size: 1.2em;
+}
+
+
+
+
+/* Stili per la sezione "My Creations" */
+.creations {
+    padding: 80px 9%;
+    text-align: center;
+}
+
+.creations h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+
+/* Stili per la griglia delle sottosezioni "My Creations" */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Griglia con 4 colonne */
+    gap: 30px; /* Spazio tra le celle della griglia */
+}
+
+
+.category-section {
+    flex: 1 1 25%; /* Ogni elemento occupa circa il 25% dello spazio disponibile */
+    flex-direction: column; /* Impila gli elementi verticalmente */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    margin-bottom: 30px;
+}
+
+.category-section img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.category-section h3 {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Stili per la sezione "About" */
+.about {
+    padding: 80px 9%;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+/* Stili per la sezione "Contact" */
+.contact {
+    padding: 80px 9%;
+    text-align: center;
+    background-color: #f8f8f8; /* Sfondo leggermente grigio per contrasto */
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi del form verticalmente */
+}
+
+.contact label {
+    margin-bottom: 5px;
+    font-weight: bold; /* Etichette in grassetto */
+}
+
+.contact input,
+.contact textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Bordo grigio chiaro */
+    border-radius: 5px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo leggibile */
+}
+
+.contact textarea {
+    height: 150px;
+    resize: vertical; /* Permette all'utente di ridimensionare l'area di testo verticalmente */
+}
+
+.contact button[type="submit"] {
+    align-self: center; /* Centra il bottone */
+    padding: 12px 25px; /* Aumenta il padding del bottone */
+    background-color: #e35f26; /* Colore di sfondo del bottone */
+    color: #fff; /* Testo bianco */
+    border: none; /* Rimuovi il bordo predefinito del bottone */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Cambia il cursore in una mano al passaggio del mouse */
+    transition: background-color 0.3s ease; /* Aggiungi una transizione плавный per il colore di sfondo */
+}
+
+.contact button[type="submit"]:hover {
+    background-color: #d14f0f; /* Colore di sfondo più scuro al passaggio del mouse */
+}
+
+/* Stili per i messaggi di errore */
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+/* Responsive Design (opzionale) */
+@media (max-width: 400px) {
+    .contact input,
+    .contact textarea,
+    .contact button[type="submit"] {
+        font-size: 14px; /* Dimensione del testo più piccola su schermi piccoli */
+    }
+}
+
+
+
+
+
+/* Stile generale per la pagina Terms and Conditions */
+.terms-content {
+    padding: 100px 9% 30px; /* Padding per i lati e per il top */
+    max-width: 960px; /* Larghezza massima del contenuto per una buona leggibilità */
+    margin: 0 auto; /* Centra il contenuto nella pagina */
+    font-family: 'Montserrat', sans-serif; /* Usa lo stesso font del sito */
+    color: #333; /* Colore del testo principale */
+    line-height: 1.6; /* Interlinea per una buona leggibilità */
+}
+
+.terms-content h2 {
+    font-size: 2em; /* Dimensione dei titoli principali */
+    margin-bottom: 20px;
+    color: #e35f26; /* Colore dei titoli coerente con il sito */
+}
+
+.terms-content h3 {
+    font-size: 1.5em; /* Dimensione dei sottotitoli */
+    margin-top: 30px; /* Spazio prima dei sottotitoli */
+    margin-bottom: 10px;
+}
+
+.terms-content p {
+    margin-bottom: 15px; /* Spazio tra i paragrafi */
+}
+
+.terms-content ul {
+    list-style-type: disc; /* Stile delle liste puntate */
+    margin-left: 20px; /* Indentazione delle liste */
+    margin-bottom: 15px;
+}
+
+.terms-content li {
+    margin-bottom: 10px; /* Spazio tra gli elementi della lista */
+}
+
+/* Stili per i link nella pagina Terms and Conditions */
+.terms-content a {
+    color: #e35f26; /* Usa il colore dei link del sito */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-content a:hover {
+    color: #d14f0f; /* Colore dei link al passaggio del mouse */
+    text-decoration: underline; /* Sottolinea i link al passaggio del mouse (opzionale) */
+}
+
+
+/* Responsive Design (ad esempio per schermi più piccoli) */
+@media (max-width: 768px) {
+    .terms-content {
+        padding: 40px 5%; /* Padding ridotto su schermi piccoli */
+    }
+
+    .terms-content h2 {
+        font-size: 1.5em;
+    }
+
+    .terms-content h3 {
+        font-size: 1.2em;
+    }
+}

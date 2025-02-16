@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svikò Jewelry - Crafted Elegance</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="Crafted Elegance" class="logo-image">
+            Svikò Jewelry - Crafted Elegance</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" target="_blank" rel="noopener noreferrer">Index</a></li>
+                    <li><a href="index.html#about" target="_blank" rel="noopener noreferrer">About</a></li>
+                    <li><a href="index.html#contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                    <li><a href="shop.html" target="_blank" rel="noopener noreferrer">Shop</a></li>
+                </ul>
+            </nav>
+            <div id="cart-icon">
+            <i class="ri-shopping-bag-fill"></i>
+            <span class="cart-item-count"></span>
+        </div>
+
+    </header>
+
+
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content">
+            <div class="cart-box">
+                <img src="products-img/item1.png">
+                <div class="cart-detail">
+                    <h2 class="cart-product-title">Nome prodotto 1</h2>
+                    <span class="cart-price">€100</span>
+                    <div class="cart-quantity"><!-- i button non devono funzionare perché sono pezzi unici -->
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="ri-delete-bin-fill cart-remove"></i>
+            </div>
+        </div>
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">€0</div>
+        </div>
+        <button class="btn-buy">Buy Now</button>
+        <i class="ri-close-large-fill" id="cart-close"></i>
+    </div>
+
+
+    <main>
+        <!-- Terms Content -->
+        <section class="terms-content">
+            <div class="container">
+                <h2>Welcome to Svikò Jewelry</h2>
+                <p><b>By accessing this website, you accept the terms and conditions stated below.</b><br> 
+                <b>If you do not agree, please discontinue use.</b></p>
+
+                <h3>Payment</h3>
+                <p>Payments can be made via PayPal or Wire Transfer. For alternative methods, please contact us directly. Prices are in Euro, and USD conversions follow current exchange rates. Shipping charges are separate.</p>
+
+                <h3>Delivery</h3>
+                <p>Orders are shipped via Italian Post with tracking. Alternative shipping methods are available upon request. Estimated delivery times:</p>
+                <ul>
+                    <li>EU: 7-14 days</li>
+                    <li>US & Worldwide: 10-30 days</li>
+                </ul>
+                <p>International shipments may be delayed by customs.</p>
+
+                <h3>Copyright</h3>
+                <p>All designs, tutorials, and jewelry are the intellectual property of Svitlana Kochetova. Reproducing, reselling, or teaching her designs without permission is prohibited.</p>
+
+                <h3>Refunds & Exchanges</h3>
+                <p>Digital purchases and class fees are non-refundable. Physical jewelry and kits can be returned within 7 days of receipt.</p>
+
+                <h3>Cookies</h3>
+                <p>This site uses cookies to improve functionality and user experience. By continuing, you agree to the use of cookies as outlined in our Privacy Policy.</p>
+
+                <h3>License & Restrictions</h3>
+                <p>All content on this site belongs to Svitlana Kochetova. You may not:</p>
+                <ul>
+                    <li>Republish or resell content</li>
+                    <li>Modify, copy, or redistribute designs</li>
+                    <li>Use site content for commercial purposes without permission</li>
+                </ul>
+
+                <h3>Comments & Liability</h3>
+                <p>Users may post comments, but Svikò Jewelry reserves the right to remove inappropriate content. The company is not liable for third-party opinions posted on the site.</p>
+
+                <h3>Hyperlinking</h3>
+                <p>Certain organizations (e.g., government agencies, search engines, news outlets) may link to our site without prior approval. Others must request permission.</p>
+
+                <h3>Disclaimer</h3>
+                <p>While we strive for accuracy, we do not guarantee that all site information is always up to date. Users access content at their own risk.</p>
+            </div>
+        </section>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Email: <a href="mailto:svitlanakochetova@libero.it">svitlanakochetova@libero.it</a></p>
+            <p>Phone: <a href="tel:+393283450654">+39 328 345 0654</a></p>
+            <p>Location: Naples, Italy</p>
+            <p>Customer Service: 9:00 AM – 6:00 PM (Rome time)</p>
+        </div>
+    
+        <div class="shipping-info">
+            <h3>Shipping Information</h3>
+            <p>All packages are shipped via Italian Post with priority tracking.Alternative shipping methods available upon request.</p>
+            <p>Delivery times:</p>
+            <ul>
+            <li><strong>EU:   </strong> 7-14 days</li>
+            <li><strong>US & Worldwide:   </strong> 10-30 days</li>
+            </ul>
+            <p>International shipments may be delayed by customs. All packages are shipped in a customer-friendly way.</p>
+        </div>
+    
+        <div class="footer-links">
+            <h3><a href="terms.html">Terms, Conditions & Privacy Policy</a></h3>
+        </div>
+        </div>
+    </footer>
+
+
+    <script src="cart.js"></script>
+</body>
+
+
+</html>

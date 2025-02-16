@@ -1,0 +1,48 @@
+/* script.js */
+document.addEventListener("DOMContentLoaded", () => {
+    const buyNowButton = document.getElementById("buy-now");
+    const totalPriceElement = document.getElementById("total-price");
+    let total = parseFloat(totalPriceElement.textContent);
+
+    // PayPal Checkout
+    paypal.Buttons({
+        createOrder: (data, actions) => {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: { value: total.toFixed(2) }
+                }]
+            });
+        },
+        onApprove: (data, actions) => {
+            return actions.order.capture().then(details => {
+                alert("Pagamento completato da " + details.payer.name.given_name);
+            });
+        }
+    }).render("#paypal-button-container");
+
+    // Google Pay con Stripe
+    let stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY");
+    let elements = stripe.elements();
+    let googlePayButton = document.createElement("button");
+    googlePayButton.textContent = "Paga con Google Pay";
+    googlePayButton.id = "google-pay-button";
+    document.body.appendChild(googlePayButton);
+
+    googlePayButton.addEventListener("click", async () => {
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: "card",
+            card: elements.create("card")
+        });
+
+        if (error) {
+            alert("Errore nel pagamento: " + error.message);
+        } else {
+            alert("Pagamento completato con Google Pay");
+        }
+    });
+
+    buyNowButton.addEventListener("click", () => {
+        document.getElementById("paypal-button-container").style.display = "block";
+        googlePayButton.style.display = "block";
+    });
+});

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Collana xxxyy",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkk 123894 jef",
+        "image": "products-img/item3.png",
+        "price": 50
+    },
+    {
+        "id": "2",
+        "name": "Collana Classica AB",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njkivfnjkk njvnoovo nkovomov jef",
+        "image": "products-img/item4.png",
+        "price": 40
+    },
+    {
+        "id": "3",
+        "name": "Collana Classica ZS",
+        "description": "lorem ipsum etc etc etc njvsnk avs etc etc etc njki",
+        "image": "products-img/item5.png",
+        "price": 40
+    }
+]

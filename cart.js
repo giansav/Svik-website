@@ -157,7 +157,7 @@ buyNowButton.addEventListener ("click", () => {
     updateCartCount(0);
     updateTotalPrice();
 
-    alert("Thank you for your purchase!");
+    window.location.href = "checkout.html";
 });
 
 

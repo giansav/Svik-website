@@ -659,3 +659,164 @@ footer {
         font-size: 1.2em;
     }
 }
+
+
+
+/* Stili per la sezione "Billing" */
+.container {
+    display: flex; /* Use flexbox for the main layout */
+    gap: 20px; /* Space between the billing section and the order summary */
+    padding: 20px; /* Add some padding to the container */
+}
+
+.billing {
+    flex: 1;
+    padding: 80px 9%;
+    text-align: center;
+    background-color: #f8f8f8; /* Sfondo leggermente grigio per contrasto */
+}
+
+.billing h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.billing form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi del form verticalmente */
+}
+
+.billing label {
+    display: inline-flex; /* Enables flexbox layout for labels */
+    align-items: center; /* Vertically aligns items within the label */
+    margin-right: 20px; /* Adds some spacing between options (adjust as needed) */
+  }
+  
+.billing label img {
+    margin-left: 5px; /* Adds spacing between the text and the image */
+    vertical-align: middle; /* Ensures the image is vertically aligned with the text */
+    width: 100px;
+    height: 100%; /* Adjust image height as needed */
+  }
+
+
+.billing input,
+.billing textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Bordo grigio chiaro */
+    border-radius: 5px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo leggibile */
+}
+
+
+.billing button[type="submit"] {
+    align-self: center; /* Centra il bottone */
+    padding: 12px 25px; /* Aumenta il padding del bottone */
+    background-color: #e35f26; /* Colore di sfondo del bottone */
+    color: #fff; /* Testo bianco */
+    border: none; /* Rimuovi il bordo predefinito del bottone */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Cambia il cursore in una mano al passaggio del mouse */
+    transition: background-color 0.3s ease; /* Aggiungi una transizione плавный per il colore di sfondo */
+}
+
+.billing button[type="submit"]:hover {
+    background-color: #d14f0f; /* Colore di sfondo più scuro al passaggio del mouse */
+}
+
+.payment-options {
+    display: inline-flex; /* Arrange payment options horizontally */
+    gap: 60px; /* Add spacing between options */
+    margin-bottom: 15px; /* Add spacing below the options group */
+    align-items: center; /* Vertically align items */
+}
+
+.payment-options label {
+    display: flex; /* Use flexbox for the label */
+    align-items: center; /* Vertically align within the label */
+    cursor: pointer;
+    gap: 20px; /* Space *within* each option (image, radio, text) */ /* Added this! */
+}
+
+.payment-options img {
+    width: 80px; 
+    height: 100%; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between image and radio button */
+    vertical-align: middle;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and text */
+    vertical-align: middle;
+}
+
+/* Optional: Add a border or other visual cue to the selected option */
+.payment-options input[type="radio"]:checked + img {
+    border: 2px solid #e35f26; /* Example: orange border */
+    border-radius: 5px; /* Example: rounded corners */
+}
+
+/* Optional: Style the label text if you have text in it */
+.payment-options label span { /* If you have a <span> for text inside the label */
+    vertical-align: middle;
+}
+
+.order-summary {
+    width: 300px; /* Fixed width for the order summary */
+    border: 1px solid #ccc; /* Add a border */
+    padding: 20px; /* Add padding inside the order summary */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+.btn-edit-cart {
+    display: block;
+    padding: 10px 30px;
+    background: #9b9a9a;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+.btn-proceed-checkout {
+    display: block;
+    padding: 10px 30px;
+    background: #e35f26;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    margin: 20px auto 0;
+    cursor: pointer;
+}
+
+/* Media Query for responsiveness (adjust breakpoint as needed) */
+@media (max-width: 768px) {
+    .payment-options {
+        flex-direction: column; /* Stack options vertically on smaller screens */
+        align-items: flex-start; /* Align to the left */
+        gap: 10px; /* Adjust spacing */
+    }
+    .payment-options label {
+        flex-direction: row; /* Ensure image and radio are in a row */
+    }
+    .payment-options label img {
+        margin-right: 10px; /* Space between image and radio button */
+    }
+}
+
+
+/* Responsive Design (opzionale) */
+@media (max-width: 400px) {
+    .billing input,
+    .billing textarea,
+    .billing button[type="submit"] {
+        font-size: 14px; /* Dimensione del testo più piccola su schermi piccoli */
+    }
+}

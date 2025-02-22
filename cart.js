@@ -1,22 +1,16 @@
 const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const cartClose = document.querySelector("#cart-close");
-cartIcon.addEventListener("click",() => cart.classList.add("active"));
-cartClose.addEventListener("click",() => cart.classList.remove("active"));
+cartIcon.addEventListener("click", () => cart.classList.add("active"));
+cartClose.addEventListener("click", () => cart.classList.remove("active"));
 
 const addCartButtons = document.querySelectorAll(".add-cart");
 addCartButtons.forEach(button => {
-    button.addEventListener("click", Event => { 
+    button.addEventListener("click", Event => {
         const productBox = Event.target.closest(".product-box");
         addToCart(productBox);
     });
 });
-
-
-
-
-
-
 
 const cartContent = document.querySelector(".cart-content");
 
@@ -51,20 +45,13 @@ const addToCart = (product) => {
     `;
 
     cartContent.appendChild(cartBox);
-    
-
-
 
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
-        cartBox.remove(); 
-
-        updateCartCount(-1); // aggiorna il totale degli oggetti dopo che un oggetto è stato rimosso
-
-        updateTotalPrice(); // aggiorna il totale della spesa dopo che un oggetto è stato rimosso
+        cartBox.remove();
+        updateCartCount(-1);
+        updateTotalPrice();
+        saveCartToLocalStorage();
     });
-
-
-    
 
     cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
         const numberElement = cartBox.querySelector(".number");
@@ -74,25 +61,23 @@ const addToCart = (product) => {
         if (event.target.classList.contains("decrement") && quantity > 1) {
             quantity--;
             if (quantity === 1) {
-                decrementButton.style.color = "#999"; // Correct way to set style
+                decrementButton.style.color = "#999";
             }
         } else if (event.target.classList.contains("increment")) {
             alert("This item is unique, you cannot add more!");
-            decrementButton.style.color = "#333"; // Correct way to set style
+            decrementButton.style.color = "#333";
         }
 
         numberElement.textContent = quantity;
-
-        updateTotalPrice(); // aggiorna il totale della spesa dopo che è stata aumentata o diminuita la quantità di un oggetto
+        updateTotalPrice();
+        saveCartToLocalStorage();
     });
 
-    updateCartCount(1); // aggiorna il totale degli oggetti dopo che un oggetto è stato aggiunto al carrello
-    updateTotalPrice(); // aggiorna il totale della spesa dopo che un oggetto è stato aggiunto al carrello
-    
+    updateCartCount(1);
+    updateTotalPrice();
+    saveCartToLocalStorage();
 };
 
-
-// Modifica principale: delega di eventi
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('add-cart')) {
         const productBox = event.target.closest('.product-box');
@@ -109,10 +94,6 @@ document.addEventListener('click', function (event) {
     }
 });
 
-
-
-
-// Funzione per aggiornare il totale della spesa nel carrello
 const updateTotalPrice = () => {
     const totalPriceElement = document.querySelector(".total-price");
     const cartBoxes = document.querySelectorAll(".cart-box");
@@ -125,8 +106,7 @@ const updateTotalPrice = () => {
         total += price * quantity;
     });
     totalPriceElement.textContent = `€ ${total}`;
-};    
-
+};
 
 let cartItemCount = 0;
 const updateCartCount = change => {
@@ -141,10 +121,8 @@ const updateCartCount = change => {
     }
 }
 
-
-// pulsante Buy Now
 const buyNowButton = document.querySelector(".btn-buy");
-buyNowButton.addEventListener ("click", () => {
+buyNowButton.addEventListener("click", () => {
     const countCartBoxes = cartContent.querySelectorAll(".cart-box");
     if (countCartBoxes.length === 0) {
         alert("Your cart is empty! Please add items to your cart before buying.");
@@ -153,16 +131,56 @@ buyNowButton.addEventListener ("click", () => {
 
     countCartBoxes.forEach(cartBox => cartBox.remove());
 
-    cartItemCount = 0; // quando si preme Buy Now si azzera il totale. MANCA IL VERO CHECKOUT!!!
+    cartItemCount = 0;
     updateCartCount(0);
     updateTotalPrice();
-
+    localStorage.removeItem('cartItems');
     window.location.href = "checkout.html";
 });
 
+const saveCartToLocalStorage = () => {
+    const cartItems = [];
+    const cartBoxes = document.querySelectorAll(".cart-box");
+    cartBoxes.forEach(cartBox => {
+        const image = cartBox.querySelector(".cart-img").src;
+        const name = cartBox.querySelector(".cart-product-title").textContent;
+        const price = cartBox.querySelector(".cart-price").textContent.replace("€", "");
+        const quantity = cartBox.querySelector(".number").textContent;
+        cartItems.push({ image, name, price, quantity });
+    });
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
 
+const loadCartFromLocalStorage = () => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartContent.innerHTML = "";
+    storedCartItems.forEach(item => {
+        const product = {
+            image: item.image,
+            name: item.name,
+            price: item.price,
+        };
+        addToCart(product);
+        const cartBoxes = document.querySelectorAll(".cart-box");
+        cartBoxes.forEach(cartBox => {
+            if (cartBox.querySelector(".cart-product-title").textContent === item.name) {
+                cartBox.querySelector(".number").textContent = item.quantity;
+            }
+        });
+    });
+    updateTotalPrice();
+    // Aggiorna il contatore correttamente
+    cartItemCount = storedCartItems.length;
+    updateCartCount(0);
+};
 
 document.addEventListener("DOMContentLoaded", () => {
-    cartContent.innerHTML = ""; // Svuota il contenuto del carrello all'avvio
+    loadCartFromLocalStorage();
 });
 
+const linkToIndex = document.querySelector("#link-to-index");
+if (linkToIndex) {
+    linkToIndex.addEventListener("click", () => {
+        loadCartFromLocalStorage();
+    });
+}
